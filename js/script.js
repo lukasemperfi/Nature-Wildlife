@@ -112,6 +112,16 @@ const mSlider = new Swiper('.main-slider__swiper', {
     spaceBetween: 50,
     // Активный слайд по центру
     centeredSlides: true,
+        // Автопрокрутка
+    
+    autoplay: {
+        // Пауза между прокруткой
+        delay: 3000,
+        // Закончить на последнем слайде
+        stopOnLastSlide: false,
+        // Отключить после ручного переключения
+        disableOnInteraction: true
+    },
 });
 
 // Слайдер nested
@@ -157,5 +167,20 @@ const nestedSwipers = new Swiper('.nested-sliders__swiper', {
         // Показ только активного слайда
         limitRotation: true
     },
-
+    // Отключить предзагрузка картинок
+    preloadImages: false,
+    // Lazy Loading
+    // (подгрузка картинок)
+    lazy: {
+        // Подгружать на старте
+        // переключения слайда
+        loadOnTransitionStart: true,
+        // Подгрузить предыдущую
+        // и следующую картинки
+        loadPrevNext: true,
+    },
+    // Слежка за видимыми слайдами
+    watchSlidesProgress: true,
+    // Добавление класса видимым слайдам
+    watchSlidesVisibility: true,
 });
